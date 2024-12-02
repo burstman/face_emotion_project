@@ -67,7 +67,7 @@ def detect_faces(image):
         convert_tensor = tranformations(face)
         convert_tensor = convert_tensor.unsqueeze(0)
         convert_tensor = convert_tensor.to(device)
-        print(convert_tensor.shape)
+        # print(convert_tensor.shape)
         results = model_YOLO(convert_tensor)
         pred = F.softmax(results, dim=1)
         _, max_index = torch.max(pred, 1)
@@ -128,7 +128,7 @@ def main():
         FRAME_WINDOW = st.image([])
 
         # Access the webcam
-        video_capture = cv2.VideoCapture(0)  # Change camera index to 0
+        video_capture = cv2.VideoCapture(0, cv2.CAP_DSHOW)  # Change camera index to 0
 
         while run:
             # Capture frame-by-frame
