@@ -1,6 +1,5 @@
 numpy==1.26.4
-opencv-python==4.9.0.80
-opencv-python-headless==4.10.0.84
+opencv-python
 streamlit==1.40.2
 torch==2.5.1
 torchaudio==2.5.1
